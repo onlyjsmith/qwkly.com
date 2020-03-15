@@ -8,7 +8,7 @@ layout: default
 
 {{ content }}
 
-{% capture item_image_path %}{{ 'images/' | append: page.name }}{% endcapture%}
+{% capture item_image_path %}{{ 'images/' | append: page.slug }}{% endcapture%}
 {% for image in site.static_files %}
 {% if image.path contains item_image_path %}
 <img src="{{ site.baseurl }}{{ image.path }}" alt="image" style='max-width: 100%' />

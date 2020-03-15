@@ -4,6 +4,7 @@
 
 layout: home
 ---
+<h3>Items for sale</h3>
 
 {% for item in site.items %}
 <p>
@@ -16,7 +17,7 @@ layout: home
     (E{{ item.price }})
 
     {% assign got_image = false %}
-    {% capture item_image_path %}{{ 'images/' | append: item.name }}{% endcapture%}
+    {% capture item_image_path %}{{ 'images/' | append: item.slug }}{% endcapture%}
     {% for image in site.static_files %}
     {% if got_image == false %}
     {% if image.path contains item_image_path %}
