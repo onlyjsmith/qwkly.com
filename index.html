@@ -22,9 +22,9 @@ layout: home
     {% if got_image == false %}
     {% if image.path contains item_image_path %}
     {% assign got_image = true %}
-    {% capture image_url %}{{ site.baseurl | append: image.path }}{% endcapture%}
-    <!-- <img src="//images.weserv.nl/?url={{image_url}}&w=300&h=300"> -->
-    <img src="{{ image_url }}" alt="image" style='width: 120px; display: inline;' />
+    {% capture image_url %}{{ site.url | append: image.path }}{% endcapture%}
+    <img src="//images.weserv.nl/?url={{image_url}}&w=300&h=300">
+    <!-- <img src="{{ image_url }}" alt="image" style='width: 120px; display: inline;' /> -->
     {% endif %}
     {% endif %}
     {% endfor %}
