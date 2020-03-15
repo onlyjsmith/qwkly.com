@@ -1,0 +1,17 @@
+---
+layout: default
+---
+
+[See all](/)
+
+{{ page.name }}
+E{{ page.price }}
+
+{{ content }}
+
+{% capture item_image_path %}{{ 'images/' | append: page.name }}{% endcapture%}
+{% for image in site.static_files %}
+{% if image.path contains item_image_path %}
+<img src="{{ site.baseurl }}{{ image.path }}" alt="image" />
+{% endif %}
+{% endfor %}
