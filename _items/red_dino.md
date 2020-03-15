@@ -2,7 +2,7 @@
 slug: red_dino
 name: Amazing red dino
 price: 1
-sold: true
+sold: false
 ---
 
 Very special red dino
