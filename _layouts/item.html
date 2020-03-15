@@ -4,14 +4,13 @@ layout: default
 
 [See all](/)
 
-{{ page.name }}
-E{{ page.price }}
+**{{ page.name }}** _E{{ page.price }}_
 
 {{ content }}
 
 {% capture item_image_path %}{{ 'images/' | append: page.name }}{% endcapture%}
 {% for image in site.static_files %}
 {% if image.path contains item_image_path %}
-<img src="{{ site.baseurl }}{{ image.path }}" alt="image" />
+<img src="{{ site.baseurl }}{{ image.path }}" alt="image" style='max-width: 100%' />
 {% endif %}
 {% endfor %}

@@ -1,5 +1,5 @@
 ---
-name: dino
+name: Amazing red dino
 price: 1
 sold: true
 ---

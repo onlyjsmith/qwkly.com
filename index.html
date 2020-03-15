@@ -11,21 +11,23 @@ layout: home
   <span class='sold'>SOLD</span>
   <del>{{item.name}}</del>
   {% else %}
-  <a href="{{ item.url }}">{{ item.name }}</a>
-  (E{{ item.price }})
-  {% endif %}
+  <a href="{{ item.url }}">
+    {{ item.name }}
+    (E{{ item.price }})
 
-  {% capture item_image_path %}{{ 'images/' | append: item.name }}{% endcapture%}
-  {% assign got_image = false %}
-  {% for image in site.static_files %}
-  {% if got_image == false %}
-  {% if image.path contains item_image_path %}
-  {% assign got_image = true %}
-  {% capture image_url %}{{ site.baseurl | append: image.path }}{% endcapture%}
-  <!-- <img src="//images.weserv.nl/?url={{image_url}}&w=300&h=300"> -->
-  <img src="{{ image_url }}" alt="image" style='width: 50px; display: inline;' />
+    {% assign got_image = false %}
+    {% capture item_image_path %}{{ 'images/' | append: item.name }}{% endcapture%}
+    {% for image in site.static_files %}
+    {% if got_image == false %}
+    {% if image.path contains item_image_path %}
+    {% assign got_image = true %}
+    {% capture image_url %}{{ site.baseurl | append: image.path }}{% endcapture%}
+    <!-- <img src="//images.weserv.nl/?url={{image_url}}&w=300&h=300"> -->
+    <img src="{{ image_url }}" alt="image" style='width: 120px; display: inline;' />
+    {% endif %}
+    {% endif %}
+    {% endfor %}
+  </a>
   {% endif %}
-  {% endif %}
-  {% endfor %}
 </p>
 {% endfor %}

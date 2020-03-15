@@ -1,5 +1,5 @@
 ---
-name: bottle
+name: Blue bottle
 price: 10
 sold: false
 ---
